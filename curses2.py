@@ -29,7 +29,7 @@ def affichage_aire_de_jeu(hauteur, largeur, titre):
 
 
 
-def controle(win, key, keys = [____]):
+def controle(win, key, keys = [27]):
 	'''
 	Controles de jeu
 	paramètres :
@@ -40,22 +40,22 @@ def controle(win, key, keys = [____]):
 	  code de la touche reconnue
 	'''
 	# Sauvegarde de la dernière touche reconnue
-	old_key = ____
+	old_key = key
 
 	# Aquisition d'un nouveau caractère depuis le clavier
-	key = win.____
+	key = win.getch()
 
 	# Si aucune touche actionnée (pas de nouveau caractère)
 	# ou pas dans la liste des touches acceptées
 	# key prend la valeur de la dernière touche connue
-	if key == ____ or key not in ____ :
-		key = ____
+	if key == 0 or key not in keys :
+		key = old_key
 
 	# Raffaichissement de la fenètre
 	win.refresh()
 
 	# retourne le code la touche
-	return ____
+	return key
 
 
 
